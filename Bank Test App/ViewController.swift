@@ -8,10 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var amountLabel: UILabel?
+    
+    var amount = 9999.99 {
+        didSet {
+            uptadeAmountLabel()
+        }
+    }
+    func uptadeAmountLabel() {
+        amountLabel?.text = "\(amount)"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+        uptadeAmountLabel()
     }
 
 
